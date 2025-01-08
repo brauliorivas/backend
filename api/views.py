@@ -90,7 +90,7 @@ class LandingAPIDetail(APIView):
         if record == None:
             return Response(None, status=status.HTTP_404_NOT_FOUND)
 
-        ref.child(f'{pk}').delete()
+        ref.child(pk).delete()
 
         return Response({"result": "correctly removed"}, status=status.HTTP_204_NO_CONTENT)
 
